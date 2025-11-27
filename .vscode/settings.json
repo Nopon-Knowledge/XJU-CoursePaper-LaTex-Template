@@ -1,0 +1,26 @@
+{
+  // 禁止它自动乱选（可选，但很推荐）
+  "latex-workshop.latex.autoBuild.run": "never",
+
+  // 关键：默认 recipe 设为 latexmk(xelatex)
+  "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
+
+  "latex-workshop.latex.recipes": [
+    { "name": "latexmk (xelatex)", "tools": ["latexmk-xelatex"] }
+  ],
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk-xelatex",
+      "command": "latexmk",
+      "args": [
+        "-xelatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    }
+  ]
+}
